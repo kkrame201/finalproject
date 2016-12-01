@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body ng-app="yelpMod" ng-controller="yelpCtrl">
+
+  {{restaurantName}}
+  {{restaurantReviewCount}}
+
+  <form action="POST">
+    <input type="text" placeholder="City">
+    <input type="text" placeholder="Type of Search">
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="js/foodFactory.js"></script>
+  <script src="js/foodCtrl.js"></script>
+</body>
+</html>
