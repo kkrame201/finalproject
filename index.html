@@ -7,26 +7,26 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
   <title>Document</title>
 </head>
-<body ng-app>
+<body ng-app="weatherMod" ng-controller="weatherCtrl">
 
 
   <h1>Search</h1>
 
   <input type="text" ng-model="userCity">
-  <button ng-click="findWeather(userState, userCity)">Insert Zip</button>
+  <button ng-click="findWeather()">Insert Zip</button>
 
 
 
 
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <script src="app.js"></script>
-  <script src="foodselect_factory.js"></script>
-  <script src="movieselect_factory.js"></script>
-  <script src="search_factory.js"></script>
-  <script src="movie_controller.js"></script>
-  <script src="food_controller.js"></script>
-  <script src="final_controller.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/foodselect_factory.js"></script>
+  <script src="js/factories/movieselect_factory.js"></script>
+  <script src="js/factories/search_factory.js"></script>
+  <script src="js/controllers/movie_controller.js"></script>
+  <script src="js/controllers/food_controller.js"></script>
+  <script src="js/controllers/final_controller.js"></script>
 </body>
 </html>
