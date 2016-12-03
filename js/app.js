@@ -4,13 +4,14 @@ app.controller('weatherCtrl', function($http, $scope) {
 
   $scope.findWeather = function(userCity) {
 
-    
+
 
       $http({
         method:'GET',
         url: 'http://api.yelp.com/v2/searchterm=donut&location=detroit',
       }).then(function(response){
         console.log(response);
+        
       });
 
      //+ '=' + userCity + '.json')
