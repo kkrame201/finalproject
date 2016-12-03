@@ -5,35 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+  <script
+     src="https://code.jquery.com/jquery-3.1.1.min.js"
+     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <title>Document</title>
 </head>
-<body ng-app="yelpMod" ng-controller="yelpCtrl">
+
+<body ng-app="dateNightMod">
+
   <div class="container">
       <div class="row">
-      <h1>Logo Here</h1>
+        <h1>Logo Here</h1>
 
-      <div class="container">
-        <div class="row">
-       <div class="btn-group btn-breadcrumb">
-           <a href="#" class="btn btn-primary">Home</i></a>
-           <a href="#" class="btn btn-info">Snippets</a>
-           <a href="#" class="btn btn-success">Breadcrumbs</a>
-           <a href="#" class="btn btn-warning">Rainbow</a>
+        <div class="container">
+          <div class="row">
+           <div class="btn-group btn-breadcrumb">
+               <a href="#" class="btn btn-primary">Home</i></a>
+               <a href="#" class="btn btn-info">Snippets</a>
+               <a href="#" class="btn btn-success">Breadcrumbs</a>
+               <a href="#" class="btn btn-warning">Rainbow</a>
+           </div>
+         </div>
        </div>
- </div>
 
       </div>
       <div class="row">
-        <div class="col-lg-12 bg-danger">
-          <h1>This area will change content with each View</h1>
-          {{restaurantName}}
-          {{restaurantReviewCount}}
 
-          <form action="POST">
-            <input type="text" placeholder="City">
-            <input type="text" placeholder="Type of Search">
-          </form>
+        <div class"col-lg-12 bg-danger">
+          <div ng-controller="movieCtrl">
+            <form>
+            <input type="text" placeholder="Zip Code" ng-model="userZip">
+            <input type="text" placeholder="Date" value="yy-mm-dd" id="datepicker"  ng-model="movieDate">
+              <button ng-click="findMovie(userZip, movieDate)">Let's Go!</button>
+
+            </form>
+            <p>Format options:<br>
+  <select id="format">
+    <option value="mm/dd/yy">Default - mm/dd/yy</option>
+    <option value="yy-mm-dd">ISO 8601 - yy-mm-dd</option>
+    <option value="d M, y">Short - d M, y</option>
+    <option value="d MM, y">Medium - d MM, y</option>
+    <option value="DD, d MM, yy">Full - DD, d MM, yy</option>
+    <option value="&apos;day&apos; d &apos;of&apos; MM &apos;in the year&apos; yy">With text - 'day' d 'of' MM 'in the year' yy</option>
+  </select>
+</p>
+
         </div>
       </div>
     </div>
@@ -43,9 +64,18 @@
     Copyright 2016
   </footer>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#format" ).on( "change", function() {
+      $( "#datepicker" ).datepicker( "option", "dateFormat", $( this ).val() );
+    });
+  } );
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   <script src="js/foodFactory.js"></script>
   <script src="js/foodCtrl.js"></script>
+  <script src="js/movieCtrl.js"></script>
 </body>
 </html>

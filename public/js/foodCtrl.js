@@ -1,4 +1,4 @@
-var app = angular.module('yelpMod');
+var app = angular.module('dateNightMod');
 
 app.controller('yelpCtrl', function($scope, yelpFactory) {
   yelpFactory.then(function(response) {
