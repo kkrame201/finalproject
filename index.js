@@ -16,6 +16,7 @@ var ourData;
 yelp.search({ term: 'taco', location: 'Detroit' })
 .then(function (data) {
   // console.log(data);
+  
   ourData = data;
 })
 .catch(function (err) {
