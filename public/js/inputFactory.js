@@ -4,10 +4,12 @@ app.factory('apiFactory', function($http) {
 
   var jsonObj = {};
 
-  var getFoodInfo = function(jsonStuff) {
-    jsonObj.food = jsonStuff;
-    console.log(jsonObj);
-  }
+  var getFoodInfo = function() {
+    $http.get('/food').then(function successCallback(response) {
+      jsonObj.food = response;
+      console.log(jsonObj);
+    });
+  };
 
   var getMovieInfo = function(jsonStuff) {
     jsonObj.movie = jsonStuff;
