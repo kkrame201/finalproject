@@ -8,8 +8,10 @@ app.controller('foodCtrl', function($scope, $http, $timeout, apiFactory) {
     console.log('sending food stuff done ' + searchterm + ' ' + searchZip);
     apiFactory.sendYelp(searchterm, searchZip);
 
+
     $timeout(function() {
       foodStuff = apiFactory.retrieveYelp();
+      $scope.restaurantSparklePony = foodStuff.data.businesses[0].name;
     }, 1000);
 
   };
