@@ -4,9 +4,9 @@ app.controller('foodCtrl', function($scope, $http, $timeout, apiFactory) {
 
   var foodStuff;
 
-  $scope.sendFoodStuff = function(searchterm, searchlocation) {
-    console.log('sending food stuff done ' + searchterm + ' ' + searchlocation);
-    apiFactory.sendYelp(searchterm, searchlocation);
+  $scope.sendFoodStuff = function(searchterm, searchZip) {
+    console.log('sending food stuff done ' + searchterm + ' ' + searchZip);
+    apiFactory.sendYelp(searchterm, searchZip);
 
     $timeout(function() {
       foodStuff = apiFactory.retrieveYelp();

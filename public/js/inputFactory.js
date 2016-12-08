@@ -24,9 +24,9 @@ app.factory('apiFactory', function($http) {
       return jsonObj;
     },
 
-    sendYelp: function(searchterm, searchlocation) {
+    sendYelp: function(searchterm, searchZip) {
       yelpObj.term = searchterm;
-      yelpObj.location = searchlocation;
+      yelpObj.postal_code = searchZip;
       console.log(yelpObj);
       return yelpObj;
     },
@@ -36,7 +36,7 @@ app.factory('apiFactory', function($http) {
          var url = 'https://api.yelp.com/v2/search';
          var params = {
            callback: 'angular.callbacks._0',
-           location: yelpObj.location,
+           postal_code: yelpObj.postal_code,
            oauth_consumer_key: 'Gf_5Zit2VdKjs4trQHkFAA', //Consumer Key
            oauth_token: '0hdeY89sEUBPuJcXsT6QsLqPpIC4dtnk', //Token
            oauth_signature_method: "HMAC-SHA1",
