@@ -2,6 +2,9 @@ body {
   background-color:black !important;
 }
 
+p {
+  color:#ffffff;
+}
 .row h1 {
   font-family: comic sans;
   color:white;

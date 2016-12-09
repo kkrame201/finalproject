@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   <script
@@ -16,31 +16,26 @@
 </head>
 
 <body ng-app="dateNightMod">
-  <form>
-  <input type="text" placeholder="Zip Code" ng-model="userSelection.userZip">
-  <input type="text" placeholder="Enter Date: YYYY-MM-DD" value="yy-mm-dd" id="datepicker"  ng-model="userSelection.movieDate">
-    <button ng-click="findMovie(userSelection)">Let's Go!!</button>
-  </form>
-  <a href="#/food">Food</a>
 
   <div class="container">
-      <div class="row">
-        <h1>Logo Here</h1>
-        <div class="container">
-          <div class="row">
-           <div class="btn-group btn-breadcrumb">
-               <a href="#" class="btn btn-primary">Home</i></a>
-               <a href="#" class="btn btn-info">Snippets</a>
-               <a href="#" class="btn btn-success">Breadcrumbs</a>
-               <a href="#" class="btn btn-warning">Rainbow</a>
+        <div class="row">
+          <h1>Logo Here</h1>
+          <div class="container">
+            <div class="row">
+             <div class="btn-group btn-breadcrumb">
+                 <a href="#/" class="btn btn-primary">Home</i></a>
+                 <a href="#/movie" class="btn btn-info">Movie</a>
+                 <a href="#/food" class="btn btn-success">Food</a>
+                 <a href="#/your-date" class="btn btn-warning">Your Date</a>
+             </div>
            </div>
          </div>
-       </div>
-      </div>
+        </div>
 
-      <div class="row">
-          <ng-view></ng-view>
-    </div>
+        <div class="row">
+            <ng-view></ng-view>
+        </div>
+      </div>
 
 
   <footer style="width:100%;position:fixed; bottom:0; margin:0 auto;">
